@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+    width: 80%
+  margin: 0 auto;
+  padding: 0;
+  background: #ecf0f1;
+
+    
+}
+
+#nav {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+#nav p {
+  margin: 4px;
+}
+
+iframe {
+    border: none;
+}
+
+#nav h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+#nav input {
+  margin-left: 20px;
+}
+
+.container {
+/*  display: grid;*/
+/*  grid-template-columns: 1fr [start] 800px [middle] 800px [end] 1fr;*/
+/*  grid-template-rows: 450px 400px;*/
+}
+
+.usa, .bargraph p {
+        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.map {
+/*  grid-column: start / end;*/
+  width: 80%;
+  height: 100%;
+    margin: 0 auto;
+/*  justify-self: center;*/
+      display: grid;
+grid-template-rows: 40px 400px;
+   
+}
+
+
+.content {
+    padding: 30px;
+}
+.pie {
+   
+}
+
+.line {
+ 
+      background-color: #fafafa;
+    
+  
+}
+
+
+.tooltip {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  border: 4px solid #2c3e50;
+  background-color: #ecf0f1;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.tooltip p {
+  margin: 2px;
+}
+
+.tooltip:after {
+  content: ' ';
+  position: absolute;
+  left: 50%;
+  border: 8px solid transparent;
+  border-top-color: #2c3e50;
+  bottom: -20px;
+  margin-left: -4px;
+}
+
+.state {
+  stroke: none;
+}
+
+.state:hover {
+  cursor: pointer;
+}
+
+.state.active {
+  stroke: #2c3e50;
+  stroke-width: 2px;
+}
+
+.y-axis-label {
+  font-size: 0.8em;
+}
+
+.tick text {
+  font-size: 1.5em;
+}
+
+/* =============================== CIRCLE STARTS ============================================= */
+
+
+
+#circle svg {
+    
+    width: 100%;
+}
+
+#controls {
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 3%;
+
+}
+
+
+
+.txt {
+    font-size: 15px;
+    text-anchor: middle;
+    fill: #4f442b;
+}
+
+g > .txt.active {
+    font-size: 30px;
+}
+
+circle {
+    fill: #b86363;
+    stroke: black;
+    stroke-width: 1px;
+    padding: 40px;
+}
+
+circle.active {
+    fill: #FE9922;
+
+}
+
+circle.inactive {
+    fill: #C4B9AC;
+}
+
+.entry, .affect{
+    position: relative;
+    background-color: transparent;
+    border: 1px solid #790a01;
+    color: #790a01;
+    padding: 15px 15px;
+    text-align: center;
+    margin-right: 12px;
+    transition: all .5s ease;
+
+}
+
+#circle {
+    text-align: center;
+}
+
+.cntry:hover, .affect:hover {
+    background-color: #790a01;
+    color: white;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+        
+

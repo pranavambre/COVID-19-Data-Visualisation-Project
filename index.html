@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>D3 Final Project</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+    /> 
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+          .box {
+              display: none;
+          }
+            .rectangle {
+                fill: steelblue;
+                border: 1px solid #fff;
+            }
+            .rectangle:hover {
+                fill: orange;
+            }
+            .axis {
+              font: 10px sans-serif;
+            }
+
+            .axis path,
+            .axis line {
+              fill: none;
+              stroke: #000;
+              shape-rendering: crispEdges;
+            }     
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+      <div class="container">
+<!--            <h1 style="text-align: center; padding: 30px;">COVID 19 PANDEMIC</h1>-->
+        <div class="row" style="background: #100a45; margin-bottom: 20px; color: #fff;"> 
+
+            <div class="col-lg-7" style="text-align: justify; padding: 30px;">
+                <h2>Coronavirus (COVID-19) disease pandemic</h2>
+            <p>
+              The world is currently experiencing a pandemic of an infectious disease called coronavirus disease 2019, or COVID-19. COVID-19 is caused by the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and is part of a large family of coronaviruses (CoV). Coronaviruses are transmitted from animals to people, with this particular strain of coronavirus thought to have originated from a seafood market in the city of Wuhan in China in late December of 2019.
+            </p>
+            </div>
+              <div class="col-lg-5"  style="text-align: left; padding: 30px;">
+                  <img
+                    class="img-v"
+                    src="images/giphy.gif"
+                       width =350 height="200"
+                    alt=""
+                  />
+                
+            </div>
+        </div>
+         <iframe width="100%" height="950" src="map.html" ></iframe>
+          <div class="bargraph">
+              <h4 style="text-align: center; color: #076bbe;">Top 10 countries with highest number of cases</h4>
+            <div id="drop" align=center></div>
+              <div id="bar"></div>
+              <div id="circle">
+            <h1>Corona Virus Pandemic</h1>
+            <h5>Analyze the ongoing spread of this infectious disease</h5>
+            <div id="controls"></div>
+            <svg style="width: 100%; height: 300px"></svg>
+        </div>
+              <p style="text-align: justify;background-color: #dff0ff; padding: 20px;">One Asian country and seven European countries are among the ten most affected list of countries with coronavirus, while more European countries are witnessing a surge in cases. The US replaced China as the country with the highest coronavirus cases on 26 March, while more than 92% of the global coronavirus cases are currently outside China.</p>
+          </div>
+          
+          
+    <div id="nav">
+      <h2>United State of America COVID-19 visualisation</h2>
+      <p>
+        USA COVID-19 data by date. Date:
+        <span id="date-val"></span>
+        <input id="date" type="range" step="1" />
+      </p>
+      <p>
+        Choose between total cases or deaths.
+        <input type="radio" name="data-type" value="cases" checked />
+        <label>Cases</label>
+        <input type="radio" name="data-type" value="deaths" />
+        <label>Deaths</label>
+      </p>
+      <p>Click on a state to see its trends.</p>
+    </div>
+
+    <section class="usa">
+      <div class="map">
+        <svg
+          version="1.1"
+          baseProfile="full"
+          xmlns="http://www.w3.org/2000/svg"
+          id="map"
+        ></svg>
+          
+        <svg
+          version="1.1"
+          baseProfile="full"
+          xmlns="http://www.w3.org/2000/svg"
+          id="maplegend"
+        ></svg>
+      </div>
+        
+      <div style="padding:20px; text-align: justify; background-color: #e64b1c; color: #fff;" ><p class="deaths box">
+             Confirmed coronavirus cases in the US increased significantly in the third week of March as testing was made more rapid and overtook China’s on 26 March making the US the world’s most affected country by coronavirus currently, by number of cases.</p> <br><p>
+             The coronavirus (COVID-19) disease continues to spread around the world, with almost 8 million cases and 435,700 deaths as of June 15, 2020. In the United States, the number of infections has risen dramatically since the first week of March, and the U.S. now has more confirmed cases and deaths than any other country worldwide. All 50 states have been affected, but New York has the highest number of deaths and has reported more cases than any single country outside of the United States. <br> Testing has been extremely limited in the US, and the federal government has not ordered a nationwide lockdown. This has lest states to respond in drastically different ways as case numbers continue to skyrocket – and those likely underestimate the scope of the problem since the disease is spreading largely undetected.</p>
+        </div>
+         
+      <div class="line">
+          <div class="content" style="text-align: justify;background-color: #d8d9e5;  ">
+          <h4 style="padding-left: 1em;">What is important to note about these case figures?</h4>
+          <ol>
+            <li>The reported case figures on a given date does not necessarily show the number of new cases on that day: this is due to delays in reporting</li>
+              <li>
+              The actual number of cases is likely to be much higher than the number of confirmed cases – this is due to limited testing.</li>
+              <li>Approximately 25,300 new cases of COVID-19 were reported in the United States on June 15, 2020. Between January 20 and June 15 there have been 2,057,838 confirmed cases of COVID-19 with 115,112 deaths in the U.S as reported by the World Health Organization.</li>
+          </ol>
+            </div>
+        <svg
+          version="1.1"
+          baseProfile="full"
+          xmlns="http://www.w3.org/2000/svg"
+          id="line"
+        ></svg>
+      </div>
+      <div class="pie row">
+          <div class="content col-lg-12">
+              <h4 style="text-align: center;">Total number of U.S. coronavirus (COVID-19) cases as of June 13, 2020, by state</h4>
+              <div style="text-align: justify; padding: 20px;">
+            <p > As of June 20, 2020, the state with the highest number of COVID-19 cases was New York. More than 2 million cases have been reported across the United States, with the overwhelming majority of cases found in the state of New York.     
+                The actual number of cases is likely to be much higher than the number of confirmed cases – this is due to limited testing.</p>
+              </div>
+            </div>
+             <div class="col-lg-6">
+                <svg
+                  version="1.1"
+                  baseProfile="full"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="pie"
+                ></svg>
+                <div class="col-lg-6">
+                </div>
+            </div>
+      </div>
+    </section>      
+    <div class="tooltip"></div>
+    <div id="root"></div>
+    </div>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="javascript/groupStatebyRegion.js"></script>
+    <script src="javascript/map.js"></script>
+    <script src="javascript/pie.js"></script>
+    <script src="javascript/line.js"></script>
+    <script src="javascript/app.js"></script>
+    <script src="javascript/top10countries.js"></script>
+    <script src="javascript/math.js"></script>
+    <script src="javascript/top10bubble.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+        var inputValue = $(this).attr("value");
+        var targetBox = $("." + inputValue);
+         $(".box").not(targetBox).hide();
+         $(targetBox).show();
+         });
+          });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.12.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.11.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/styled-components/4.4.1/styled-components.min.js"></script>
+  </body>
+</html>
